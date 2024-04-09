@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMC Login</title>
+
+    <!-- page icon -->
+    <link rel="icon" href="../public/login/icon.png">
+    <!-- link file css -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="login-page">
+    <div class="form">
+      <form class="login-form" action="/api/user/login" method="post">
+        <input type="text" placeholder="Unique ID" name="rollNumber" id="rollNumber" required />
+        <input type="password" placeholder="password" name="password" id="password" required />
+        <button type="submit">login</button>
+        <p class="message">Not registered? <a href="../signup/signup.html">Create an account</a></p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

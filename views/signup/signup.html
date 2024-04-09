@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="icon" href="../public/login/icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<div class="login-page">
+    <div class="form">
+        <form class="register-form" action="/api/user/create" method="post">
+            <input type="text" placeholder="Name" name="name" id="name" required />
+            <input type="text" placeholder="Roll Number" name="rollNumber" id="rollNumber" required />
+            <input type="password" placeholder="Password" name="password" id="password" required />
+            <input type="tel" id="phone" name="phone" placeholder="Contact Number" pattern="[0-9]{10}" required title="Please enter a 10-digit phone number">
+            <button type="submit">Sign Up</button>
+            <p class="message">Already registered? <a href="../login/index.html">Sign In</a></p>
+        </form>
+    </div>
+</div>
+</body>
+</html>

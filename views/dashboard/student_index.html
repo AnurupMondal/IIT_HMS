@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <main class="main-content">
+        <div class="card admission">
+            <h3>Admission</h3>
+            <p>Course: Computer Science</p>
+            <p>Year: 2022</p>
+            <p>Status: Approved</p>
+        </div>
+        <div class="card room-allotment">
+            <h3>Room Allotment</h3>
+            <p>Room: 203</p>
+            <p>Type: Single</p>
+            <p>Status: Occupied</p>
+        </div>
+        <div class="card mess-dues">
+            <h3>Mess Dues</h3>
+            <p>Semester: Spring 2023</p>
+            <p>Dues: Rs. 250.00</p>
+            <p>Status: Unpaid</p>
+        </div>
+        <div class="card complaint-registration full-width">
+            <h3>Complaint Registration</h3>
+            <form id="complaint-form">
+                <div class="form-field">
+                    <label for="student-id">Student ID</label>
+                    <input type="text" id="student-id" required>
+                </div>
+                <div class="form-field">
+                    <label for="room-number">Room Number</label>
+                    <input type="text" id="room-number" required>
+                </div>
+                <div class="form-field">
+                    <label for="complaint-text">Complaint</label>
+                    <textarea id="complaint-text" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
