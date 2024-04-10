@@ -22,6 +22,8 @@ export const user = new Schema({
     },
 });
 
+user.plugin(mongooseUniqueValidator);
+
 const userModel = model('User', user); 
 
 export default userModel;

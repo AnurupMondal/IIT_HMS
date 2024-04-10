@@ -9,18 +9,22 @@ export const createUser = async (req, res) => {
         return res.status(400).json({ message: "All fields are required" });
     }
 
-    const hashedPassword = await bcrypt.hash(userData.password, 10);
-    userData.password = hashedPassword;
+    try {
+        const hashedPassword = await bcrypt.hash(userData.password, 10);
+        userData.password = hashedPassword;
 
-    const user = await userModel.create(userData);
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+        const user = await userModel.create(userData);
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
 
-    res.cookie("token", token, {
-        httpOnly: true,
-        secure: true,
-        sameSite: "none",
-    });
-    res.redirect("/dashboard");
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none",
+        });
+        res.redirect("/dashboard");
+    } catch (error) {
+        res.redirect("/signup/signup.html?error=userAlreadyExists");
+    }
 }
 
 export const loginUser = async (req, res) => {
@@ -48,4 +52,9 @@ export const loginUser = async (req, res) => {
         sameSite: "none",
     });
     res.redirect("/dashboard");
+}
+
+export const logout = (req, res) => {
+    res.clearCookie("token");
+    res.redirect("/login");
 }

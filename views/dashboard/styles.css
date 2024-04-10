@@ -272,15 +272,17 @@ nav.close ~ .dashboard .top{
 .top img{
     width: 40px;
     border-radius: 50%;
-    
     aspect-ratio: 1/1;
 }
 .dashboard .dash-content{
-    padding-top: 50px;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 20px;
+    color: var(--text-color);
 }
 .dash-content .title{
     display: flex;
-    align-items: center;
+    justify-content: space-between;
     margin: 60px 0 30px 0;
 }
 .dash-content .title i{
@@ -300,6 +302,10 @@ nav.close ~ .dashboard .top{
     font-weight: 500;
     color: var(--text-color);
     margin-left: 10px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
 }
 .dash-content .boxes{
     display: flex;
@@ -459,4 +465,44 @@ nav.close ~ .dashboard .top{
         left: 0;
         width: 100%;
     }
+}
+
+/* complaint form */
+:root {
+    --box1-color: #ffffff;
+}
+.container {
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--box1-color);
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-group textarea {
+    resize: vertical;
+    resize: var(--resize);
+}
+.form-group button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form-group button:hover {
+    background-color: #45a049;
 }

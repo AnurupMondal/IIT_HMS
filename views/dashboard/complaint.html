@@ -29,7 +29,7 @@
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="#">
+                <li><a href="index.html">
                     <i class="fa fa-home"></i>
                     <span class="link-name">Dahsboard</span>
                 </a></li>
@@ -41,7 +41,7 @@
                     <i class="fa-solid fa-restroom"></i>
                     <span class="link-name">Room Allotment</span>
                 </a></li>
-                <li><a href="complaint.html">
+                <li><a href="#">
                     <i class="fa fa-face-angry"></i>
                     <span class="link-name">Complain</span>
                 </a></li>
@@ -76,20 +76,43 @@
                 <input type="text" placeholder="Search here...">
             </div>
             
-            <img src="../public/dashboard/user.png" alt="">
+            
         </div>
 
         <div class="dash-content">
             <div class="overview">
                 <div class="title">
                     <div class="text">
-                        <i class="uil uil-tachometer-fast-alt"></i>
-                        <div>Dashboard</div>
+                        <i class="uil uil-document-info"></i>
+                        <div>Complaint</div>
                     </div>
                     <span id="datetime"></span></div>
                 </div> 
-                <div id="user-name">
-                </div>             
+                <div class="container">
+                    <h2>Complaint Form</h2>
+                    <form id="complaintForm">
+                        <div class="form-group">
+                            <label for="rollNumber">Roll Number:</label>
+                            <input type="text" id="rollNumber" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="complaintType">Complaint Type:</label>
+                            <select id="complaintType" name="complaintType">
+                                <option value="plumbing">Plumbing</option>
+                                <option value="electricity">Electricity</option>
+                                <option value="food">Food</option>
+                                <option value="carpentry">Carpentry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="complaint">Complaint:</label>
+                            <textarea id="complaint" name="complaint" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>            
             </div>
 
         </div>
