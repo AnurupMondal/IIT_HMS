@@ -4,6 +4,7 @@ import { connectDB } from './config/mongoose.js';
 import appRouter from './routes/index.js';
 import authMiddleware from './middleware/authMiddleware.js';
 import cookieParser from 'cookie-parser';
+import complaintRoutes from './routes/complaint.js';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+app.use('/complaint', complaintRoutes);
 app.use('/', authMiddleware);
 app.use('/', express.static('views'));
 app.use('/api', appRouter);

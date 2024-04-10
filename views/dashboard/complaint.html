@@ -90,10 +90,10 @@
                 </div> 
                 <div class="container">
                     <h2>Complaint Form</h2>
-                    <form id="complaintForm">
+                    <form class="complaintForm" action="/api/complaint/create" method="post">
                         <div class="form-group">
                             <label for="rollNumber">Roll Number:</label>
-                            <input type="text" id="rollNumber" readonly>
+                            <input type="text" id="rollNumber" name="rollNumber" readonly>
                         </div>
                         <div class="form-group">
                             <label for="complaintType">Complaint Type:</label>
@@ -106,7 +106,7 @@
                         </div>
                         <div class="form-group">
                             <label for="complaint">Complaint:</label>
-                            <textarea id="complaint" name="complaint" rows="4"></textarea>
+                            <textarea id="complaint" name="complaintText" rows="4"></textarea>
                         </div>
                         <div class="form-group">
                             <button type="submit">Submit</button>
