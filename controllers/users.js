@@ -54,7 +54,8 @@ export const loginUser = async (req, res) => {
         sameSite: "none",
     });
     //if admin
-    if (userData.rollNumber === "admin") {
+    if (userData.rollNumber === "admin" || userData.rollNumber === "Admin" || 
+    userData.rollNumber === "warden" || userData.rollNumber === "Warden") {
         return res.redirect("/admin_dashboard");
     }
     //if student

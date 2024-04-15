@@ -607,3 +607,64 @@ nav.close ~ .dashboard .top{
 .mess-dues .card a:hover {
     background-color: #0056b3;
 }
+
+/* Form Styling */
+#roomForm {
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 100px;
+    background-color: var(--box1-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#roomForm label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#roomForm input[type="text"],
+#roomForm select {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box; /* Added to include padding in width calculation */
+}
+
+#roomForm button[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#roomForm button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Result Styles */
+#formResult {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+#formResult.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+#formResult.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}

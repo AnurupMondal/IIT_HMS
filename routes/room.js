@@ -1,23 +1,14 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const Room = require('../models/room.js');
-const Student = require('../models/Student');
+import { createRoom, getRooms, allotRoom } from '../controllers/room.js';
 
-router.post('/allot', async (req, res) => {
-    const { name, roomPreference } = req.body;
-    const room = await Room.findOne({ roomType: roomPreference, isAvailable: true });
+// Create a new room
+router.post('/create', createRoom);
 
-    if (!room) {
-        return res.status(404).send('No available rooms of the preferred type');
-    }
+// Get all rooms
+router.get('/rooms', getRooms);
 
-    room.isAvailable = false;
-    await room.save();
+// Allot a room to a student
+router.post('/allot', allotRoom);
 
-    const student = new Student({ name, allottedRoom: room.roomNumber });
-    await student.save();
-
-    res.send(`${name} has been allotted room ${room.roomNumber}`);
-});
-
-module.exports = router;
+export default router;

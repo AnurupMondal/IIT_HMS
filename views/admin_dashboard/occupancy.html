@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-
-
-    <title>Admin Dashboard</title>
+    <title>Room Occupancy</title>
 </head>
 <body>
     <nav>
@@ -28,7 +26,7 @@
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="#">
+                <li><a href="index.html">
                     <i class="fa fa-home"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
@@ -36,9 +34,13 @@
                     <i class="fa fa-folder"></i>
                     <span class="link-name">Student Admission</span>
                 </a></li>
-                <li><a href="add_room.html">
+                <li><a href="#">
                     <i class="fa-solid fa-restroom"></i>
                     <span class="link-name">Room Management</span>
+                </a></li>
+                <li><a href="occupancy.html">
+                    <i class="fa fa-home"></i>
+                    <span class="link-name">Room Occupancy</span>
                 </a></li>
                 <li><a href="#">
                     <i class="fa fa-face-angry"></i>
@@ -57,7 +59,7 @@
             <ul class="logout-mode">
                 <li><a href="../login/index.html">
                     <i class="uil uil-signout"></i>
-                    <span id= "logout" class="link-name">Logout</span>
+                    <span id="logout" class="link-name">Logout</span>
                 </a></li>
 
                 <li class="mode">
@@ -80,7 +82,7 @@
 
             <div class="search-box">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Search here...">
+                <input type="text" placeholder="Search here..." id="searchInput">
             </div>
             
             <img src="../public/dashboard/user.png" alt="">
@@ -90,16 +92,32 @@
             <div class="overview">
                 <div class="title">
                     <div class="text">
-                        <i class="uil uil-tachometer-fast-alt"></i>
-                        <div>Dashboard</div>
+                        <i class="fa fa-home"></i>
+                        <div>Room Occupancy</div>
                     </div>
-                    <span id="datetime"></span></div>
+                    <span id="datetime"></span>
                 </div>
-                Welcome,<div id="userName"></div>
-
+                <div class="content">
+                    <h2>Current Room Information</h2>
+                    <table id="roomTable">
+                        <thead>
+                            <tr>
+                                <th>Room Number</th>
+                                <th>Room Type</th>
+                                <th>Current Residents</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Room data will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>             
         </div>
     </section>
 
+    <!-- Add your JavaScript file here -->
     <script src="script.js"></script>
+    <script src="occupancy.js"></script>
 </body>
 </html>

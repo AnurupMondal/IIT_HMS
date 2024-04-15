@@ -20,6 +20,9 @@ export const user = new Schema({
         type: String,
         required: true,
     },
+    roomNumber: {
+        type: String
+    }
 });
 
 user.plugin(mongooseUniqueValidator);

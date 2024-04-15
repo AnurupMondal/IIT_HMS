@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -92,15 +91,15 @@
                 </div>
                 <div class="content">
                     <h2>Room Allotment System</h2>
-                    <div id="roomAllotment">
+                    <div id="roomAllotment" action="/api/room/allot" method="post">
                         <label for="rollNumber">Roll Number:</label>
                         <input type="text" id="rollNumber" name="rollNumber" readonly>
                         <label for="roomPreference">Room Preference:</label>
                         <select id="roomPreference">
                             <option value="single">Single</option>
-                            <option value="twin">Twin</option>
+                            <option value="shared">Twin</option>
                         </select>
-                        <button onclick="allotRoom()">Allot Room</button>
+                        <button type="submit">Allot</button>
                     </div>
                     <div id="allotmentResult"></div>
                 </div>
