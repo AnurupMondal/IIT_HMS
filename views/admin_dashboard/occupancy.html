@@ -66,12 +66,12 @@
                     <a href="#">
                         <i class="uil uil-moon"></i>
                     <span class="link-name">Dark Mode</span>
-                </a>
+                    </a>
 
-                <div class="mode-toggle">
-                  <span class="switch"></span>
-                </div>
-            </li>
+                    <div class="mode-toggle">
+                      <span class="switch"></span>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -91,20 +91,18 @@
         <div class="dash-content">
             <div class="overview">
                 <div class="title">
-                    <div class="text">
-                        <i class="fa fa-home"></i>
-                        <div>Room Occupancy</div>
-                    </div>
-                    <span id="datetime"></span>
+                    <i class="fa fa-home"></i>
+                    <span>Room Occupancy</span>
                 </div>
                 <div class="content">
                     <h2>Current Room Information</h2>
-                    <table id="roomTable">
+                    <table id="roomTable" class="table-room">
                         <thead>
                             <tr>
                                 <th>Room Number</th>
                                 <th>Room Type</th>
                                 <th>Current Residents</th>
+                                <th>Availability</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -118,6 +116,6 @@
 
     <!-- Add your JavaScript file here -->
     <script src="script.js"></script>
-    <script src="occupancy.js"></script>
+    <!-- <script src="occupancy.js"></script> -->
 </body>
 </html>

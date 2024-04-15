@@ -100,3 +100,34 @@ fetch('/api/user')
   .catch(error => {
     console.error('Error fetching user name:', error);
   });
+
+  // Handle Room Allotment Form Submission
+function setupRoomAllotment() {
+  const form = document.getElementById('roomAllotment');
+  form.addEventListener('submit', async (event) => {
+      event.preventDefault(); // Prevent the default form submission
+
+      const formData = new FormData(form);
+      const studentName = formData.get('rollNumber'); // Assuming the roll number is used as the student name
+      const roomPreference = formData.get('roomPreference');
+
+      try {
+          const response = await fetch('/api/room/allot', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({ studentName, roomPreference })
+          });
+
+          if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          const result = await response.json();
+          document.getElementById('allotmentResult').textContent = result.message || 'Room allotted successfully'; // Display success message
+      } catch (error) {
+          console.error('Error allotting room:', error);
+          document.getElementById('allotmentResult').textContent = 'Failed to allot room.'; // Display error message
+      }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', setupRoomAllotmentForm);

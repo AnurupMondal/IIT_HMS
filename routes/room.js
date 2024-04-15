@@ -6,7 +6,7 @@ import { createRoom, getRooms, allotRoom } from '../controllers/room.js';
 router.post('/create', createRoom);
 
 // Get all rooms
-router.get('/rooms', getRooms);
+router.get('/', getRooms);
 
 // Allot a room to a student
 router.post('/allot', allotRoom);

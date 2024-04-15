@@ -100,3 +100,35 @@ fetch('/api/user')
   .catch(error => {
     console.error('Error fetching user name:', error);
   });
+
+  // Fetch Room Data and Populate Table
+function fetchRoomData() {
+  const roomTableBody = document.querySelector("#roomTable tbody");
+
+  fetch('/api/room/')
+      .then(response => {
+          if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+      })
+      .then(data => {
+          roomTableBody.innerHTML = ''; // Clear existing rows
+          data.forEach(room => {
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                  <td>${room.roomNumber}</td>
+                  <td>${room.roomType}</td>
+                  <td>${room.currentOccupancy || 0}/${room.roomType === 'single' ? 1 : 2}</td>
+                  <td>${room.currentOccupancy < (room.roomType === 'single' ? 1 : 2) ? 'Available' : 'Occupied'}</td>
+              `;
+              roomTableBody.appendChild(row);
+          });
+      })
+      .catch(error => {
+          console.error('Error fetching room data:', error);
+          roomTableBody.innerHTML = `<tr><td colspan="4">Failed to load data</td></tr>`;
+      });
+}
+
+document.addEventListener('DOMContentLoaded', fetchRoomData);

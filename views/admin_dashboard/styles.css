@@ -668,3 +668,42 @@ nav.close ~ .dashboard .top{
     background-color: #f8d7da;
     color: #721c24;
 }
+
+/* Room Table Styling */
+.table-room {
+    width: 100%; /* Full width to utilize available space */
+    border-collapse: collapse; /* Collapses borders into a single border */
+    background-color: var(--panel-color); /* Uses variable for background color */
+    color: var(--text-color); /* Text color from root variables */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners for modern look */
+    overflow: hidden; /* Ensures the border-radius clips content */
+}
+
+.table-room th, .table-room td {
+    text-align: left; /* Aligns text to the left */
+    padding: 12px 20px; /* Adds space around text */
+    border-bottom: 1px solid var(--border-color); /* Consistent with other design elements */
+}
+
+.table-room thead th {
+    background-color: var(--primary-color); /* Primary color for header */
+    color: var(--title-icon-color); /* Ensures text is readable */
+    font-weight: 600; /* Makes header text bold */
+}
+
+.table-room tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Zebra striping for rows */
+}
+
+.table-room tbody tr:hover {
+    background-color: var(--box3-color); /* Highlight on hover using variable color */
+    cursor: pointer; /* Indicates the row is interactive */
+}
+
+/* Ensures table responsiveness on smaller screens */
+@media (max-width: 768px) {
+    .table-room th, .table-room td {
+        padding: 8px; /* Smaller padding on small devices */
+    }
+}

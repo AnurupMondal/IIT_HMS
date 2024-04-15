@@ -91,16 +91,16 @@
                 </div>
                 <div class="content">
                     <h2>Room Allotment System</h2>
-                    <div id="roomAllotment" action="/api/room/allot" method="post">
+                    <form id="roomAllotment" action="/api/room/allot" method="post">
                         <label for="rollNumber">Roll Number:</label>
                         <input type="text" id="rollNumber" name="rollNumber" readonly>
                         <label for="roomPreference">Room Preference:</label>
-                        <select id="roomPreference">
+                        <select id="roomPreference" name="roomPreference">
                             <option value="single">Single</option>
-                            <option value="shared">Twin</option>
+                            <option value="shared">Shared</option>
                         </select>
                         <button type="submit">Allot</button>
-                    </div>
+                    </form>
                     <div id="allotmentResult"></div>
                 </div>
             </div>             
