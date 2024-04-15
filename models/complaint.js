@@ -4,7 +4,6 @@ const complaintSchema = new Schema({
     rollNumber: { 
         type: String,
         required: true,
-        unique: true,
     },
     complaintType: {
         type: String,

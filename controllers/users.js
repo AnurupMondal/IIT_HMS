@@ -44,6 +44,8 @@ export const loginUser = async (req, res) => {
         return res.status(401).json({ message: "Invalid Password" });
     }
 
+    
+
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
 
     res.cookie("token", token, {
@@ -51,6 +53,11 @@ export const loginUser = async (req, res) => {
         secure: true,
         sameSite: "none",
     });
+    //if admin
+    if (userData.rollNumber === "admin") {
+        return res.redirect("/admin_dashboard");
+    }
+    //if student
     res.redirect("/dashboard");
 }
 

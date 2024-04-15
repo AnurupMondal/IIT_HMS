@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,8 +12,6 @@
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-
 
     <title>Student Dashboard</title>
 </head>
@@ -36,11 +35,11 @@
                     <i class="fa fa-folder"></i>
                     <span class="link-name">Student Admission</span>
                 </a></li>
-                <li><a href="room.html">
+                <li><a href="#">
                     <i class="fa-solid fa-restroom"></i>
                     <span class="link-name">Room Allotment</span>
                 </a></li>
-                <li><a href="#">
+                <li><a href="complaint.html">
                     <i class="fa fa-face-angry"></i>
                     <span class="link-name">Complain</span>
                 </a></li>
@@ -79,45 +78,33 @@
                 <input type="text" placeholder="Search here...">
             </div>
             
-            
+            <img src="../public/dashboard/user.png" alt="">
         </div>
 
         <div class="dash-content">
             <div class="overview">
                 <div class="title">
                     <div class="text">
-                        <i class="uil uil-document-info"></i>
-                        <div>Complaint</div>
+                        <i class="uil uil-building"></i>
+                        <div>Room Allotment</div>
                     </div>
-                    <span id="datetime"></span></div>
-                </div> 
-                <div class="container">
-                    <h2>Complaint Form</h2>
-                    <form class="complaintForm" action="/api/complaint/create" method="post">
-                        <div class="form-group">
-                            <label for="rollNumber">Roll Number:</label>
-                            <input type="text" id="rollNumber" name="rollNumber" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="complaintType">Complaint Type:</label>
-                            <select id="complaintType" name="complaintType">
-                                <option value="plumbing">Plumbing</option>
-                                <option value="electricity">Electricity</option>
-                                <option value="food">Food</option>
-                                <option value="carpentry">Carpentry</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="complaint">Complaint:</label>
-                            <textarea id="complaint" name="complaintText" rows="4"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit">Submit</button>
-                        </div>
-                    </form>
-                </div>            
-            </div>
-
+                    <span id="datetime"></span>
+                </div>
+                <div class="content">
+                    <h2>Room Allotment System</h2>
+                    <div id="roomAllotment">
+                        <label for="rollNumber">Roll Number:</label>
+                        <input type="text" id="rollNumber" name="rollNumber" readonly>
+                        <label for="roomPreference">Room Preference:</label>
+                        <select id="roomPreference">
+                            <option value="single">Single</option>
+                            <option value="twin">Twin</option>
+                        </select>
+                        <button onclick="allotRoom()">Allot Room</button>
+                    </div>
+                    <div id="allotmentResult"></div>
+                </div>
+            </div>             
         </div>
     </section>
 
