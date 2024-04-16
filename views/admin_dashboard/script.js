@@ -132,3 +132,84 @@ function fetchRoomData() {
 }
 
 document.addEventListener('DOMContentLoaded', fetchRoomData);
+
+// Document ready function
+document.addEventListener('DOMContentLoaded', function() {
+  fetchComplaints();
+});
+
+// Fetch all complaints from the server
+async function fetchComplaints() {
+  try {
+      const response = await fetch('/api/complaints');
+      if (response.ok) {
+          const complaints = await response.json();
+          displayComplaints(complaints);
+      } else {
+          throw new Error(`Failed to fetch complaints: ${response.status} ${response.statusText}`);
+      }
+  } catch (error) {
+      console.error('Error:', error);
+      alert('Error loading complaints: ' + error.message);
+  }
+} 
+
+// Display all complaints on the page
+function displayComplaints(complaints) {
+  const container = document.getElementById('complaints-container');
+  container.innerHTML = ''; // Clear existing cards
+  complaints.forEach(complaint => {
+      const card = document.createElement('div');
+      card.className = 'complaint-card';
+      card.innerHTML = `
+          <p><strong>Type:</strong> ${complaint.complaintType}</p>
+          <p><strong>Details:</strong> ${complaint.complaintText}</p>
+          <button onclick="updateComplaintStatus('{{complaintId}}', true)">Resolve</button>
+              ${complaint.resolved ? 'Resolved' : 'Unresolved'}
+          </button>
+      `;
+      container.appendChild(card);
+  });
+}
+
+// Toggle the status of a complaint
+
+function updateComplaintStatus(complaintId, newStatus) {
+  fetch(`/api/complaints/${complaintId}`, {  // Your endpoint needs to capture complaintId dynamically
+      method: 'PUT',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ resolved: newStatus })
+  })
+  .then(response => response.json())
+  .then(data => {
+      console.log('Update Success:', data);
+      fetchComplaints(); // Optionally refresh the list or update the UI as needed
+  })
+  .catch(error => {
+      console.error('Error updating complaint:', error);
+  });
+}
+
+
+function toggleStatus(element, complaintId, resolved) {
+  const newStatus = !resolved; // Toggle the boolean status
+  element.innerText = newStatus ? 'Resolved' : 'Unresolved';
+  element.style.backgroundColor = newStatus ? 'green' : 'red';
+  
+  // Update complaint status on the server
+  fetch(`/api/complaints/${complaintId}`, {
+      method: 'PUT', // Use PUT method for updates
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ resolved: newStatus })
+  }).then(response => {
+      return response.json();
+  }).then(data => {
+      console.log('Status updated successfully', data);
+  }).catch(error => {
+      console.error('Error updating status:', error);
+  });
+}

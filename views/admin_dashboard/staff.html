@@ -28,7 +28,7 @@
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="#">
+                <li><a href="index.html">
                     <i class="fa fa-home"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
@@ -36,19 +36,23 @@
                     <i class="fa fa-folder"></i>
                     <span class="link-name">Student Admission</span>
                 </a></li>
-                <li><a href="add_room.html">
+                <li><a href="#">
                     <i class="fa-solid fa-restroom"></i>
                     <span class="link-name">Room Management</span>
                 </a></li>
-                <li><a href="complaints.html">
+                <li><a href="occupancy.html">
+                    <i class="fa fa-home"></i>
+                    <span class="link-name">Room Occupancy</span>
+                </a></li>
+                <li><a href="#">
                     <i class="fa fa-face-angry"></i>
                     <span class="link-name">View Complaints</span>
                 </a></li>
-                <li><a href="expences.html">
+                <li><a href="#">
                     <i class="fa-solid fa-list-check"></i>
                     <span class="link-name">Expense Records</span>
                 </a></li>
-                <li><a href="staff.html">
+                <li><a href="#">
                     <i class="fa-solid fa-file-invoice"></i>
                     <span class="link-name">Staff Management</span>
                 </a></li>
@@ -91,15 +95,29 @@
                 <div class="title">
                     <div class="text">
                         <i class="uil uil-tachometer-fast-alt"></i>
-                        <div>Dashboard</div>
+                        <div>Staff Management</div>
                     </div>
                     <span id="datetime"></span></div>
                 </div>
-                Welcome,<div id="userName"></div>
-
+                <div class="content">
+                    <h2>Add/Remove Staff</h2>
+                    <form id="roomForm" action="/api/" method="post">
+                        <label for="roomNumber">Name:</label>
+                        <input type="text" id="roomNumber" name="roomNumber" required>
+                        <label for="roomType">Room Type:</label>
+                        <select id="roomType" name="roomType" required>
+                            <option value="single">Single</option>
+                            <option value="shared">Shared</option>
+                        </select>
+                        <button type="submit">Add Room</button>
+                    </form>
+                    <div id="formResult"></div>
+                </div>
+            </div>             
         </div>
     </section>
 
+    <!-- Add your JavaScript file here -->
     <script src="script.js"></script>
 </body>
 </html>

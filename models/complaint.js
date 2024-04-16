@@ -14,6 +14,10 @@ const complaintSchema = new Schema({
         type: String,
         required: true,
     },
+    resolved: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 const Complaint = model('Complaint', complaintSchema);

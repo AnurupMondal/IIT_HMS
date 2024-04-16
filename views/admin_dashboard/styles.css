@@ -707,3 +707,87 @@ nav.close ~ .dashboard .top{
         padding: 8px; /* Smaller padding on small devices */
     }
 }
+
+/* complaint cards */
+/* Custom Styles for Complaint Cards */
+.complaints {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.complaint-card {
+    background-color: var(--panel-color);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    width: 90%; /* Adjust based on layout */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.complaint-card p {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.status-button {
+    padding: 10px 20px;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: red; /* Default color for unresolved */
+    transition: var(--tran-02);
+}
+
+.status-button:hover {
+    background-color: #cc0000; /* Darker shade for hover effect */
+}
+
+/* Adjusting the button color dynamically through JS */
+
+/* Media Queries for Responsive Layout */
+@media (max-width: 768px) {
+    .complaints {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.expense-table { 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-top: 20px; /* Adds space above the table */
+} 
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+} 
+
+thead th { 
+    background-color: #f2f2f2; 
+    padding: 10px; 
+    text-align: left; 
+} 
+
+tbody td { 
+    padding: 10px; 
+    border-top: 1px solid #ddd; 
+} 
+
+.delete-btn { 
+    color: red; 
+    cursor: pointer; 
+} 
+
+.total-amount { 
+    padding: 10px; 
+    text-align: right; 
+    background-color: #f2f2f2; 
+}

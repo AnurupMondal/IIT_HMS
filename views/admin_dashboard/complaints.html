@@ -5,15 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!----======== CSS ======== -->
+    <!--======== CSS ======== -->
     <link rel="stylesheet" href="./styles.css">
      
-    <!----===== Iconscout CSS ===== -->
+    <!--===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-
-
     <title>Admin Dashboard</title>
 </head>
 <body>
@@ -22,13 +19,11 @@
             <div class="logo-image">
                <img src="../public/dashboard/dash_logo.png" alt="">
             </div>
-
             <span class="logo_name">IIT HMS</span>
         </div>
-
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="#">
+                <li><a href="index.html">
                     <i class="fa fa-home"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
@@ -44,7 +39,7 @@
                     <i class="fa fa-face-angry"></i>
                     <span class="link-name">View Complaints</span>
                 </a></li>
-                <li><a href="expences.html">
+                <li><a href="#">
                     <i class="fa-solid fa-list-check"></i>
                     <span class="link-name">Expense Records</span>
                 </a></li>
@@ -59,17 +54,15 @@
                     <i class="uil uil-signout"></i>
                     <span id= "logout" class="link-name">Logout</span>
                 </a></li>
-
                 <li class="mode">
                     <a href="#">
                         <i class="uil uil-moon"></i>
-                    <span class="link-name">Dark Mode</span>
-                </a>
-
-                <div class="mode-toggle">
-                  <span class="switch"></span>
-                </div>
-            </li>
+                        <span class="link-name">Dark Mode</span>
+                    </a>
+                    <div class="mode-toggle">
+                        <span class="switch"></span>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -77,26 +70,28 @@
     <section class="dashboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
-
             <div class="search-box">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" placeholder="Search here...">
             </div>
-            
             <img src="../public/dashboard/user.png" alt="">
         </div>
-
         <div class="dash-content">
             <div class="overview">
                 <div class="title">
-                    <div class="text">
-                        <i class="uil uil-tachometer-fast-alt"></i>
-                        <div>Dashboard</div>
-                    </div>
-                    <span id="datetime"></span></div>
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <div>Complaints</div>
+                    <span id="datetime"></span>
                 </div>
-                Welcome,<div id="userName"></div>
+            </div>
 
+            <!-- Complaint Cards -->
+            <div class="complaints">
+                <h2>Complaints</h2>
+                <div id="complaints-container">
+                    <!-- Complaint cards will be dynamically inserted here -->
+                </div>
+            </div>
         </div>
     </section>
 
