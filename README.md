@@ -1,42 +1,105 @@
-The IIT students' Hall Management Center (HMC) has requested us to develop the following software to
-automate various book-keeping activities associated with its day to day operations.
- After a student takes admission, he/she presents a note from the admission unit, along with his/her
-name, permanent address, contact telephone number, and a photograph. He/she is then allotted a
-hall, and also a specic room number. A letter indicating this allotted room is issued to the concerned
-student.
- Students incur mess charges every month. The mess manager would input to the software the total
-charges for each student in a month on mess account.
- Each room has a xed room rent. The newly constructed halls have higher rent compared to some of
-the older halls. Twin sharing rooms have lower rent.
- Each hall provides certain amenities to the students such as reading rooms, play rooms, TV room, etc.
-A xed amount is levied on each student on this count.
- The total amount collected from each student of a hall towards mess charges is handed over to the
-mess manager every month. For this, the computer needs to print a sheet with the total amount due to
-each mess manager is printed. Printed cheques are issued to each manager and signatures are obtained
-from them on the sheet.
- Whenever a student comes to pay his dues, his total due is computed as the sum of mess charge,
-amenity charge, and room rent.
- The students should be able to raise various types of complaints using a web browser in their room
-or in the Lab. The complaints can be repair requests such as fused lights, non-functional water taps,
-non-functional water lters, room repair, etc. They can also register complaints regarding the behavior
-of attendants, mess staff, etc. For this round-the-clock operation of the software is required.
- The HMC receives an annual grant from the Institute for staff salary and the upkeep of the halls and
-gardens. The HMC chairman should be provided support for distribution of the grant among the
-different halls. The Wardens of different halls should be able to enter their expenditure details against
-the allocations.
- The controlling warden should be able to view the overall room occupancy.
- The warden of each hall should be able to nd out the occupancy of his hall. He should also be able to
-view the complaints raised by the students and post his Action Taken Report (ATR) to each complaint.
- The halls employ attendants and gardeners. These temporary employees receive a xed pay on a per
-day basis. The Hall clerk enters any leave taken by an attendant or a gardener from at the terminal
-located at the hall office. At the end of every month a consolidated list of salary payable to each
-employee of the hall along with cheques for each employee is printed out.
- The HMC incurs petty expenses such as repair works carried out, news paper and magazine subscrip-
-tions, etc. It should be possible to enter these expenses.
- Whenever a new staff is recruited his details including his daily pay is entered. Whenever a staff leaves,
-it should be possible to delete his records.
- The warden should be able to view the statement of accounts any time. The warden would take a print
-out of the annual consolidated statement of accounts, sign and submit it to the Institute administration
-for approval and audit verication.
-The software should be very secure to prevent the possibility of various types of frauds and nancial
-irregularities.
+# Hall Management Center (HMC) Software
+
+This software is developed for the IIT students' Hall Management Center (HMC) to automate book-keeping activities associated with its daily operations. Below are the key features and functionalities of the software.
+
+---
+
+## Features and Functionalities
+
+### Student Admission and Room Allotment
+- Upon admission, students provide:
+  - Note from the admission unit
+  - Name, permanent address, contact number, and photograph
+- Allotment of:
+  - Hall
+  - Specific room number
+- Generation of an allotment letter for the student.
+
+### Mess Charges and Room Rent
+- **Mess Charges**: Mess manager inputs the monthly mess charges for each student.
+- **Room Rent**:
+  - Varies based on hall (new halls have higher rent than older ones).
+  - Twin-sharing rooms have lower rent.
+- **Amenities Charges**:
+  - Fixed charges for amenities like reading rooms, play rooms, and TV rooms.
+
+### Payment and Collection
+- **Student Payments**:
+  - Total dues = Mess Charges + Amenity Charges + Room Rent.
+  - Students pay their dues online or at the hall office.
+- **Mess Manager Collection**:
+  - Software computes total mess charges collected from each hall.
+  - Generates a printable sheet with total amounts.
+  - Printed cheques are issued to mess managers, and signatures are obtained.
+
+### Complaint Management
+- Students can raise complaints via a web browser (accessible from rooms or labs).
+- Types of complaints:
+  - Repair requests (e.g., lights, taps, water filters, room repairs).
+  - Staff behavior complaints (e.g., attendants, mess staff).
+- Warden actions:
+  - View complaints.
+  - Post Action Taken Reports (ATR) for each complaint.
+
+### Annual Grant and Expenditure Management
+- HMC receives an annual grant for staff salaries and hall upkeep.
+- Software supports:
+  - Distribution of grants among halls.
+  - Wardens entering expenditure details against allocated funds.
+
+### Room Occupancy Management
+- **Controlling Warden**:
+  - View overall room occupancy.
+- **Hall Warden**:
+  - View hall-specific occupancy.
+
+### Staff and Salary Management
+- **Temporary Staff**:
+  - Employees (attendants, gardeners) are paid on a per-day basis.
+  - Leave records entered by hall clerks.
+- **Monthly Payroll**:
+  - Consolidated list of salaries is generated for all staff.
+  - Printable cheques issued for salary payments.
+- **Staff Management**:
+  - Add new staff with details, including daily pay.
+  - Remove staff when they leave.
+
+### Expense Management
+- Record petty expenses such as:
+  - Repairs.
+  - Newspaper and magazine subscriptions.
+- Generate consolidated account statements for auditing.
+
+### Financial Reports
+- Wardens can view real-time statements of accounts.
+- Annual consolidated account statements can be generated for:
+  - Printing.
+  - Approval and audit verification by the institute.
+
+---
+
+## Security
+The software incorporates robust security measures to prevent fraud and financial irregularities.
+
+---
+
+## Requirements
+- **Round-the-clock Operation**:
+  - Supports 24/7 complaint registration and resolution.
+- **Multi-user Support**:
+  - Students, wardens, clerks, and mess managers access features based on roles.
+
+---
+
+## Outputs
+- Allotment letters for students.
+- Monthly payment sheets for mess managers.
+- Cheques for mess managers and staff salaries.
+- Complaint Action Taken Reports (ATR).
+- Real-time and annual financial reports.
+
+---
+
+## Development Notes
+This software aims to streamline operations and ensure efficiency in HMC's day-to-day activities, providing secure and scalable solutions for hall management.
+
